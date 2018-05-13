@@ -1,15 +1,25 @@
 #!/bin/bash
 
-# python
+# Python 3.6
 add-apt-repository -y ppa:jonathonf/python-3.6
 
-#rethinkdb
-curl -fsSL https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
-echo "deb http://download.rethinkdb.com/apt xenial main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+# Rethinkdb
+curl -fsSL https://download.rethinkdb.com/apt/pubkey.gpg | apt-key add -
+echo "deb http://download.rethinkdb.com/apt xenial main" | tee /etc/apt/sources.list.d/rethinkdb.list
 
-# docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Docker compose
+curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+# Terraform
+wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
+unzip terraform_0.11.7_linux_amd64.zip
+mv terraform /usr/bin/terraform
+rm -rf terraform_0.11.7_linux_amd64.zip
 
 # Install
 apt update
