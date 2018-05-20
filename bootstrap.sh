@@ -37,16 +37,17 @@ curl -Ls https://github.com/docker/compose/releases/download/1.21.2/docker-compo
 chmod +x /usr/local/bin/docker-compose
 
 # Terraform
-curl -sL https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
-unzip terraform_0.11.7_linux_amd64.zip
+curl -Ls https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip -o terraform.zip
+unzip terraform.zip
 mv terraform /usr/bin/terraform
-rm -rf terraform_0.11.7_linux_amd64.zip
+rm -rf terraform.zip
 
 # Nomad
-curl -Ls https://releases.hashicorp.com/nomad/0.8.3/nomad_0.8.3_linux_amd64.zip -o /tmp/nomad.zip
-unzip /tmp/nomad.zip -d /tmp/nomad
-mv /tmp/nomad/nomad /usr/local/bin/nomad
+curl -Ls https://releases.hashicorp.com/nomad/0.8.3/nomad_0.8.3_linux_amd64.zip -o nomad.zip
+unzip -q nomad.zip
+mv nomad /usr/local/bin/nomad
 chmod +x /usr/local/bin/nomad
+rm -rf nomad.zip
 
 # Pip
 curl -s https://bootstrap.pypa.io/get-pip.py | python -
