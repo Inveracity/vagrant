@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 # Dependencies
 apt install -y software-properties-common
@@ -96,4 +95,3 @@ VIRTUALENV_ALWAYS_COPY=1
 PIPENV_VENV_IN_PROJECT=1
 PIPENV_IGNORE_VIRTUALENVS=1
 EOL
-set +x
