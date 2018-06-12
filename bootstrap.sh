@@ -95,4 +95,6 @@ PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/u
 VIRTUALENV_ALWAYS_COPY=1
 PIPENV_VENV_IN_PROJECT=1
 PIPENV_IGNORE_VIRTUALENVS=1
+LC_ALL=C.UTF-8
+LANG=C.UTF-8
 EOL
