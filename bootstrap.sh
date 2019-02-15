@@ -20,6 +20,9 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(
 curl -fsSL https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG-KEY.pub | apt-key add -
 add-apt-repository "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main"
 
+# Golang
+add-apt-repository -y ppa:longsleep/golang-backports
+
 # Install
 apt update
 apt install -y unzip
@@ -31,6 +34,7 @@ apt install -y python3.6-dev
 apt install -y build-essential
 apt install -y python3-distutils
 apt install -y salt-master salt-minion
+apt install -y golang-go
 
 # Compose
 curl -Ls https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
