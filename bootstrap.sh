@@ -5,8 +5,8 @@ apt install -y software-properties-common
 apt install -y python-software-properties
 apt install -y curl
 
-# Python 3.6
-add-apt-repository -y ppa:jonathonf/python-3.6
+# Python 3.7
+add-apt-repository -y ppa:deadsnakes/ppa
 
 # Rethinkdb
 curl -fsSL https://download.rethinkdb.com/apt/pubkey.gpg | apt-key add -
@@ -29,10 +29,9 @@ apt install -y unzip
 apt install -y apt-transport-https
 apt install -y docker-ce
 apt install -y rethinkdb
-apt install -y python3.6
-apt install -y python3.6-dev
+apt install -y python3.7
+apt install -y python3.7-dev
 apt install -y build-essential
-apt install -y python3-distutils
 apt install -y salt-master salt-minion
 apt install -y golang-go
 
@@ -56,7 +55,7 @@ rm -rf nomad.zip
 # Pip
 curl -s https://bootstrap.pypa.io/get-pip.py | python -
 curl -s https://bootstrap.pypa.io/get-pip.py | python3 -
-curl -s https://bootstrap.pypa.io/get-pip.py | python3.6 -
+curl -s https://bootstrap.pypa.io/get-pip.py | python3.7 -
 
 # Pipenv
 python3.6 -m pip install pipenv
