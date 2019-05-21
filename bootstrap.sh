@@ -23,6 +23,10 @@ add-apt-repository "deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest 
 # Golang
 add-apt-repository -y ppa:longsleep/golang-backports
 
+# gcloud and kubectl
+echo "deb http://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
 # Install
 apt update
 apt install -y unzip
@@ -34,6 +38,8 @@ apt install -y python3.7-dev
 apt install -y build-essential
 apt install -y salt-master salt-minion
 apt install -y golang-go
+apt install -y google-cloud-sdk
+apt install -y kubectl
 
 # Compose
 curl -Ls https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
