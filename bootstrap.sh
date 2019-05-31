@@ -64,7 +64,7 @@ curl -s https://bootstrap.pypa.io/get-pip.py | python3 -
 curl -s https://bootstrap.pypa.io/get-pip.py | python3.7 -
 
 # Pipenv
-python3.6 -m pip install pipenv
+python3.7 -m pip install pipenv
 
 # Saltstack config
 service salt-master stop
